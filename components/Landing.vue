@@ -4,7 +4,7 @@
             <div class="uppercase px-2 relative md:px-0 pt-40 md:pt-0">
                 <div class="font-body relative text-brand-black">
                     <div class="landing__name z-10 font-heading text-3xl md:text-5xl lg:text-6xl xl:text-7xl xxl:text-8xl text-brand-pink">Amy Gooding</div>
-                    <div class="landing__body--overlay text-brand-blue font-heading absolute text-center">
+                    <div class="landing__body--overlay pointer-events-none text-brand-blue font-heading absolute text-center">
                         <div>Packaging</div>
                         <div>Designer</div>
                     </div>
@@ -29,16 +29,23 @@
                 </div>
             </div>
             <a href="https://instagram.com/amygoodingdesign" target="_blank" class="text-brand-white landing__social absolute flex flex-row items-center">
-                <font-awesome-icon class="text-xl lg:text-2xl" :icon="['fab', 'instagram' ]" />
+                <div class="landing__social__icon">
+                    <InstagramLogo />
+                </div>
                 <div class="landing__social__text uppercase text-base ml-2 font-body md:text-lg lg:text-xl">amygoodingdesign</div>
+                
             </a>
         </div>
         
     </div>
 </template>
 <script>
-export default {
+import InstagramLogo from '~/assets/svg/instagram.svg'
 
+export default {
+    components: {
+        InstagramLogo
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -73,8 +80,23 @@ export default {
         }
 
         &__text {
-            line-height: 0;
-            margin-top: 1px;
+            
+            @include min-bp($md) {
+                line-height: 0;
+                margin-top: 1px;
+            }
+        }
+
+        &__icon {
+            svg {
+                width: 16px;
+                height: 16px;
+
+                @include min-bp($md) {
+                    width: 19px;
+                    height: 19px;
+                }
+            }
         }
     }
 
