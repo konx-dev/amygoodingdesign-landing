@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Anton Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~/assets/fonts/Anton-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hey August';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~/assets/fonts/Hey-August.ttf') format('truetype');
+}
+
+
+.class {
+    font-family: 'Anton Regular'
+}
